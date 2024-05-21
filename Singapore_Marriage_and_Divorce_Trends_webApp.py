@@ -49,9 +49,12 @@ def main():
         text-align: center;
         padding: 10px;
     }
+    .footer a:hover {
+        text-decoration: underline;  /* Underline on hover for better usability */
+    }
     </style>
     <div class="footer">
-        <p>Made by Ananya Krithika Thyagarajan | <a href="https://www.linkedin.com/in/ananya-krithikathyagarajan" target="_blank">LinkedIn</a> | <a href="https://github.com/AnanyaThyagarajan/Divorce-Trends-of-Singaporeans" target="_blank">GitHub Rep</a></p>
+        <p>Made by Ananya Krithika Thyagarajan ☃❄❤ | <a href="https://www.linkedin.com/in/ananya-krithikathyagarajan" target="_blank">LinkedIn</a> | <a href="https://github.com/AnanyaThyagarajan/Divorce-Trends-of-Singaporeans" target="_blank">GitHub Rep</a></p>
     </div>
     """
     st.markdown(footer, unsafe_allow_html=True)
