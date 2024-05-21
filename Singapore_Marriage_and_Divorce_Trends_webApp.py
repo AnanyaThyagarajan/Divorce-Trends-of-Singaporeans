@@ -28,25 +28,28 @@ def main():
     load_css('style.css')
     st.title('Singapore Marriage and Divorce Trends Dashboard')
     
-    # Sidebar to choose a dataset
     dataset_name = st.sidebar.selectbox('Select a Dataset', list(urls.keys()))
-    
-    # Load data
     data = load_data(urls[dataset_name])
 
-    # Show raw data and a plot if dataset is selected
     if st.sidebar.checkbox('Show raw data'):
         st.write(data)
     
-    # Allow user to select x and y for plotting
     if st.sidebar.checkbox('Show Plot'):
-        x_axis = st.sidebar.selectbox('Choose the X-axis', options=data.columns, index=data.columns.get_loc('Years') if 'Years' in data.columns else 0)
+        x_axis = st.sidebar.selectbox('Choose the X-axis', options=data.columns)
         y_options = [col for col in data.columns if col != x_axis]
         y_axis = st.sidebar.multiselect('Choose the Y-axis', options=y_options, default=y_options[0])
         
         if y_axis:
-            # Plotting with Plotly
+            data = convert_columns_to_numeric(data, y_axis)
             fig = px.line(data, x=x_axis, y=y_axis, title=f'Trends in {dataset_name}')
+            
+            # Set custom dimensions
+            fig.update_layout(
+                autosize=False,
+                width=800,  # Adjust width here
+                height=600  # Adjust height here
+            )
+            
             st.plotly_chart(fig)
 
 if __name__ == "__main__":
