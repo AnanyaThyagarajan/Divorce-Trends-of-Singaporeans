@@ -36,6 +36,25 @@ def main():
 
     if st.sidebar.checkbox('Show raw data'):
         st.write(data)
+    # Footer
+    footer = """
+    <style>
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #111111;
+        color: white;
+        text-align: center;
+        padding: 10px;
+    }
+    </style>
+    <div class="footer">
+        <p>Made by Ananya Krithika Thyagarajan | <a href="https://www.linkedin.com/in/ananya-krithikathyagarajan" target="_blank">LinkedIn</a> | <a href="https://github.com/AnanyaThyagarajan/Divorce-Trends-of-Singaporeans" target="_blank">GitHub</a></p>
+    </div>
+    """
+    st.markdown(footer, unsafe_allow_html=True)
     
     plot_type = st.sidebar.radio("Select Plot Type", ('Line Plot', 'Bar Plot'))
 
@@ -52,6 +71,8 @@ def main():
                 fig = px.bar(data, x=x_axis, y=y_axis, title=f'Trends in {dataset_name}')
 
             st.plotly_chart(fig)
+
+
 
 if __name__ == "__main__":
     main()
