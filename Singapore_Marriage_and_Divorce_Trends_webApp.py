@@ -12,7 +12,10 @@ def load_data(url):
     data = pd.read_csv(url)
     data.drop(columns='Unnamed: 0', inplace=True)
     return data
-
+def convert_columns_to_numeric(data, y_axis):
+    for col in y_axis:
+        data[col] = pd.to_numeric(data[col], errors='coerce')  # Convert to numeric and handle errors
+    return data
 # URLs of datasets
 urls = {
     'Population Structure': "https://raw.githubusercontent.com/AnanyaThyagarajan/Divorce-Trends-of-Singaporeans/main/dataset/cleaned_population_structure.csv",
