@@ -37,6 +37,8 @@ def main():
     if st.sidebar.checkbox('Show raw data'):
         st.write(data)
     
+    plot_type = st.sidebar.radio("Select Plot Type", ('Line Plot', 'Bar Plot'))
+
     if st.sidebar.checkbox('Show Plot'):
         x_axis = st.sidebar.selectbox('Choose the X-axis', options=data.columns)
         y_options = [col for col in data.columns if col != x_axis]
@@ -44,15 +46,11 @@ def main():
         
         if y_axis:
             data = convert_columns_to_numeric(data, y_axis)
-            fig = px.line(data, x=x_axis, y=y_axis, title=f'Trends in {dataset_name}')
-            
-            # Set custom dimensions
-            fig.update_layout(
-                autosize=False,
-                width=800,  # Adjust width here
-                height=600  # Adjust height here
-            )
-            
+            if plot_type == 'Line Plot':
+                fig = px.line(data, x=x_axis, y=y_axis, title=f'Trends in {dataset_name}')
+            elif plot_type == 'Bar Plot':
+                fig = px.bar(data, x=x_axis, y=y_axis, title=f'Trends in {dataset_name}')
+
             st.plotly_chart(fig)
 
 if __name__ == "__main__":
