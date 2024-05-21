@@ -1,48 +1,48 @@
-/* style.css */
-body {
-    background-color: #111111;  /* Very dark background */
-}
+/* style.css content */
+    body {
+        background-color: #111111;  /* Very dark background */
+    }
 
-.stButton > button {
-    color: #ffffff;  /* White text for buttons */
-    background-color: #0083B8;  /* Custom blue for button background */
-    border: none;
-    border-radius: 5px;
-    padding: 10px 24px;
-    font-size: 16px;
-    font-weight: bold;
-}
+    .stButton > button {
+        color: #ffffff;  /* White text for buttons */
+        background-color: #0083B8;  /* Custom blue for button background */
+        border: none;
+        border-radius: 5px;
+        padding: 10px 24px;
+        font-size: 16px;
+        font-weight: bold;
+    }
 
-.stTextInput > div > div > input, .stSelectbox > select {
-    color: #000; /* Black text for inputs for contrast */
-    background-color: #ffffff;  /* White background for inputs */
-    border-radius: 5px;
-    border: 2px solid #0083B8;  /* Blue border */
-    padding: 5px 10px;
-}
+    .stTextInput > div > div > input, .stSelectbox > select {
+        color: #000; /* Black text for inputs for contrast */
+        background-color: #ffffff;  /* White background for inputs */
+        border-radius: 5px;
+        border: 2px solid #0083B8;  /* Blue border */
+        padding: 5px 10px;
+    }
 
-.stSidebar > .css-1d391kg {
-    background-color: #333333;  /* Darker background for sidebar */
-    border-color: #333333;  /* Border color similar to background */
-}
+    .stSidebar > .css-1d391kg {
+        background-color: #333333;  /* Darker background for sidebar */
+        border-color: #333333;  /* Border color similar to background */
+    }
 
-.stMarkdown {
-    color: #ffffff;  /* White text for markdown */
-}
+    .stMarkdown {
+        color: #ffffff;  /* White text for markdown */
+    }
 
-.stSelectbox, .stMultiSelect {
-    background-color: #222;  /* Slightly lighter background for dropdowns */
-    color: #fff;  /* White text for dropdown */
-    border-radius: 5px;
-}
+    .stSelectbox, .stMultiSelect {
+        background-color: #222;  /* Slightly lighter background for dropdowns */
+        color: #fff;  /* White text for dropdown */
+        border-radius: 5px;
+    }
 
-.header {
-    color: #0083B8;  /* Blue headers */
-    font-weight: bold;
-}
+    .header {
+        color: #0083B8;  /* Blue headers */
+        font-weight: bold;
+    }
 
-/* Ensure that selected items in dropdowns are visible */
-.css-2trqyj, .css-1etj48m {
-    color: #0083B8;  /* Blue text for selected items */
-    background-color: #f0f2f6;  /* Light grey background for selections */
-}
+    /* Ensure that selected items in dropdowns are visible */
+    .css-2trqyj, .css-1etj48m {
+        color: #0083B8;  /* Blue text for selected items */
+        background-color: #f0f2f6;  /* Light grey background for selections */
+    }
